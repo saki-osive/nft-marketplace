@@ -29,7 +29,7 @@ module.exports = {
   /**
   * contracts_build_directory tells Truffle where to store compiled contracts
   */
-  contracts_build_directory: './build/ethereum-contracts',
+  contracts_build_directory: './client/contracts/ethereum-contracts',
 
   /**
   * contracts_directory tells Truffle where to find your contracts
@@ -53,11 +53,11 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    // development: {
-    //   host: "127.0.0.1",     // Localhost (default: none)
-    //   port: 8545,            // Standard Ethereum port (default: none)
-    //   network_id: "*"       // Any network (default: none)
-    // },
+    development: {
+      host: "127.0.0.1",     // Localhost (default: none)
+      port: 7545,            // Standard Ethereum port (default: none)
+      network_id: "*"       // Any network (default: none)
+    },
     local_ethereum: {
       network_id: 31337,
       host: '127.0.0.1',

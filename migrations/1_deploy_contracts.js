@@ -1,6 +1,10 @@
+var BoredPetsNFT = artifacts.require("BoredPetsNFT");
+var Marketplace = artifacts.require("Marketplace");
 
-var SimpleStorage = artifacts.require("SimpleStorage");
+module.exports = async function(deployer) {
 
-module.exports = function(deployer) {
-  deployer.deploy(SimpleStorage);
-};
+  // Because BoredPetsNFT requires the Marketplace contract address, order matters here!
+  await deployer.deploy(Marketplace);
+  const marketplace = await Marketplace.deployed();
+  await deployer.deploy(BoredPetsNFT, marketplace.address);
+}
