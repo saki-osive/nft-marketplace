@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 import Web3Modal from 'web3modal'
 
-import Marketplace from '../contracts/ethereum-contracts/Marketplace.json'
-import BoredPetsNFT from '../contracts/ethereum-contracts/BoredPetsNFT.json'
+import Marketplace from '../contracts/optimism-contracts/Marketplace.json'
+import BoredPetsNFT from '../contracts/optimism-contracts/BoredPetsNFT.json'
 
 export default function ResellNFT() {
   const [formInput, updateFormInput] = useState({ price: '', image: '' })
@@ -45,10 +45,10 @@ export default function ResellNFT() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-1/2 flex flex-col pb-12">
+      <div className="w-1/2 flex flex-col pb-12 text-black">
         <input
           placeholder="Asset Price in Eth"
-          className="mt-2 border rounded p-4"
+          className="mt-2 border rounded p-4 text-black"
           onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
         />
         {
